@@ -1,0 +1,66 @@
+:root{--bg:#050505;--sf:#101010;--ink:#F2F0EC;--mu:#9A9A96;--ln:#F2F0EC26;--ac:#C2A878;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--ln)}
+main{max-width:1040px;margin:0 auto;padding:24px}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+h2{font-weight:500;margin:0 0 16px}
+button,input,select{font:inherit;color:var(--ink);background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:9px 12px}
+button{cursor:pointer}
+button.on,button.pri{background:var(--ac);border-color:var(--ac);color:#050505;font-weight:600}
+button.del{color:#ff8a8a}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:28px}
+.kpi{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:18px}
+.kpi span{color:var(--mu);font-size:.9rem}
+.kpi b{display:block;font-size:1.9rem;font-weight:500}
+form.f{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:16px;margin-bottom:28px;align-items:end}
+label{display:grid;gap:4px;font-size:.85rem;color:var(--mu)}
+label.c{display:flex;align-items:center;gap:8px;color:var(--ink)}
+.w{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th,td{padding:10px 8px;border-bottom:1px solid var(--ln);text-align:left;font-size:.95rem}
+th{color:var(--mu);font-weight:400}
+.login{max-width:340px;margin:12vh auto;display:grid;gap:12px}
+ 
+/* Selector de fotos */
+form.f label{min-width:0}
+form.f input[type="file"]{width:100%;max-width:100%;padding:6px}
+form.f input[type="file"]::file-selector-button{margin-right:10px;padding:6px 10px;border:1px solid var(--ln);border-radius:6px;background:var(--bg);color:var(--ink);cursor:pointer}
+form.f label:has(input[type="file"]){grid-column:1/-1}
+ 
+/* Descripción y fotos actuales */
+form.f textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--ln);border-radius:8px;padding:9px 12px;resize:vertical;min-height:84px;width:100%}
+form.f label.wide{grid-column:1/-1}
+.thumbs{grid-column:1/-1;display:flex;gap:12px;flex-wrap:wrap}
+.th{display:grid;gap:6px;color:var(--ink)}
+.th img{width:84px;height:84px;object-fit:cover;border-radius:8px;display:block}
+.th .rm{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--mu)}
+.th .rm input{padding:0}
+ 
+/* Filtros y tabla de productos */
+.filtros{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;margin-bottom:14px}
+.nota{color:var(--mu);font-size:.9rem;margin:0 0 10px}
+.mini{width:44px;height:56px;object-fit:cover;border-radius:6px;display:block;background:var(--sf);border:1px solid var(--ln)}
+.tag{font-size:.75rem;color:var(--ac);border:1px solid var(--ln);border-radius:999px;padding:1px 8px;margin-left:6px}
+@media(max-width:700px){.filtros{grid-template-columns:1fr 1fr}.filtros input{grid-column:1/-1}}
+ 
+/* Poco stock (Resumen) */
+.stock-list{display:grid;gap:10px}
+.stock-row{display:flex;align-items:center;gap:14px;background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:10px 14px}
+.stock-info{flex:1;min-width:0}
+.stock-info b{display:block;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stock-info span{color:var(--mu);font-size:.85rem}
+.stock-row .tag{margin:0;white-space:nowrap}
+.tag.rojo{color:#ff8a8a;border-color:#ff8a8a66}
+.stock-ok{background:var(--sf);border:1px solid var(--ln);border-radius:12px;padding:16px;color:var(--mu)}
+ 
+/* Subtítulo dentro de un formulario */
+form.f .sub{grid-column:1/-1;margin:8px 0 0;font-size:1rem;font-weight:500}
+ 
+/* Enlace a la tienda */
+#top{display:flex;gap:14px;align-items:center}
+a.ver{color:var(--ac);text-decoration:none}
+a.ver:hover{text-decoration:underline}
+.login a.ver{text-align:center}
+ 
